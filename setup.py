@@ -31,7 +31,8 @@ setup(
     long_description=readme,
     author="MCP CI",
     author_email='mcp-ci@mirantis.com',
-    url='https://mirantis.com',
+    url='https://github.com/brain461/ar_too.git',
+    download_url = 'https://github.com/brain461/ar_too/tarball/0.1'
     packages=[
         'ar_too',
     ],
