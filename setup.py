@@ -24,7 +24,7 @@ setup_requirements = []
 
 setup(
     name='ar_too',
-    version="0.1",
+    version="0.3",
     use_scm_version=True,
     setup_requires=setup_requirements,
     description="Artifactory configuration tool",
@@ -32,7 +32,7 @@ setup(
     author="MCP CI",
     author_email='mcp-ci@mirantis.com',
     url='https://github.com/brain461/ar_too.git',
-    download_url = 'https://github.com/brain461/ar_too/tarball/0.1',
+    download_url = 'https://github.com/brain461/ar_too/tarball/0.3',
     packages=['ar_too'],
     package_dir={'ar_too':
                  'ar_too'},

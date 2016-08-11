@@ -296,7 +296,8 @@ def _get_artifactory_session(username=None, passwd=None, auth=None,
                 "You must pass either username/password, auth, or session"
                 )
     ses = None
-    if session.auth:
+    if session:
+       if session.auth:
            ses = session
     if auth and not ses:
         ses = requests.Session()
