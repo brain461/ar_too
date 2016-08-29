@@ -52,7 +52,7 @@ def update_password(host_url, username, orig_pass, target_pass):
     InvalidCredentialsError :
         If neither the original or target credentials work to update the password
     UnknownArtifactoryRestError :
-        If we get a response we haven't encountered and don't kow what to do with
+        If we get a response we haven't encountered and don't know what to do with
     """
 
     orig_auth = (username, orig_pass)

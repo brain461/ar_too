@@ -8,6 +8,7 @@ Contents:
 
    readme
    usage
+   testing
 
 Indices and tables
 ==================

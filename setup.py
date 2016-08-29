@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 try:
-    from setuptools import setup
+    from setuptools import setup, find_packages
 except ImportError:
     from distutils.core import setup
 
@@ -10,21 +10,23 @@ with open('README.rst') as readme_file:
     readme = readme_file.read()
 
 requirements = [
-    "xmltodict",
+    "click",
     "requests",
-    "click"
+    "xmltodict"
 ]
 
 test_requirements = [
-    # TODO: put package test requirements here
-    "pytest"
+    "click",
+    "mock",
+    "pytest",
+    "xmltodict"
 ]
 
 setup_requirements = []
 
 setup(
     name='ar_too',
-    version="0.3",
+    version="0.4",
     use_scm_version=True,
     setup_requires=setup_requirements,
     description="Artifactory configuration tool",
@@ -32,7 +34,7 @@ setup(
     author="MCP CI",
     author_email='mcp-ci@mirantis.com',
     url='https://github.com/brain461/ar_too.git',
-    download_url = 'https://github.com/brain461/ar_too/tarball/0.3',
+    download_url = 'https://github.com/brain461/ar_too/tarball/0.4',
     packages=['ar_too'],
     package_dir={'ar_too':
                  'ar_too'},
