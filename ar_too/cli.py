@@ -159,7 +159,7 @@ def _config_admin_pass(host_url, password, target_password):
     Parameters
     ----------
     host_url : string
-        url for artifactory server, don't include /artifactory context
+        url for artifactory server, including the /artifactory context
     password : string
         password for admin user
     target_password : string
@@ -192,7 +192,7 @@ def _fetch_repos(host_url, username, password, inc_defaults, inc_filter,
     Parameters
     ----------
     host_url : string
-        url for artifactory server, don't include /artifactory context
+        url for artifactory server, including the /artifactory context
     username : string
         admin username on artifactory server
     password : string

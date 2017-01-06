@@ -58,7 +58,7 @@ def update_password(host_url, username, orig_pass, target_pass):
     orig_auth = (username, orig_pass)
     target_auth = (username, target_pass)
 
-    get_pass_url = '{}/artifactory/api/security/encryptedPassword'.format(
+    get_pass_url = '{}/api/security/encryptedPassword'.format(
             normalize_url(host_url)
             )
 
@@ -81,7 +81,7 @@ def update_password(host_url, username, orig_pass, target_pass):
     if auth == target_auth:
         return False
 
-    user_json_url = '{}/artifactory/api/security/users/{}'.format(
+    user_json_url = '{}/api/security/users/{}'.format(
             normalize_url(host_url),
             username
             )
@@ -144,7 +144,7 @@ def get_artifactory_config_from_url(host_url, auth):
                 a tuple a la requests auth of the form (user, password)
     """
     headers = {'Accept': 'application/xml'}
-    config_url = "{}/artifactory/api/system/configuration".format(
+    config_url = "{}/api/system/configuration".format(
             normalize_url(host_url)
             )
 
@@ -202,7 +202,7 @@ def update_artifactory_config(host_url, auth, config_dict):
         true if we succeeded
     """
     headers = {'Content-type': 'application/xml'}
-    config_url = "{}/artifactory/api/system/configuration".format(
+    config_url = "{}/api/system/configuration".format(
             normalize_url(host_url)
             )
     xml_config = xmltodict.unparse(config_dict)
@@ -251,7 +251,7 @@ def cr_repository(host_url, repo_dict, auth=None, session=None):
     if 'key' not in repo_dict:
         raise InvalidAPICallError("The repo_dict must include a repo key (repo_dict['key'])")
 
-    repo_url = '{}/artifactory/api/repositories/{}'.format(
+    repo_url = '{}/api/repositories/{}'.format(
             normalize_url(host_url),
             repo_dict['key']
             )
@@ -349,7 +349,7 @@ def get_repo_configs(host_url, repo_list, username=None, passwd=None,
 
     repo_configs_list = []
     for repo in repo_list:
-        repo_url = '{}/artifactory/api/repositories/{}'.format(
+        repo_url = '{}/api/repositories/{}'.format(
                 normalize_url(host_url),
                 repo
                 )
@@ -385,7 +385,7 @@ def get_repo_list(host_url, repo_type="ALL", include_defaults=False,
     Session overrides auth overides username/password
     See _get_artifactory_session for details
     """
-    repos_url = '{}/artifactory/api/repositories'.format(host_url)
+    repos_url = '{}/api/repositories'.format(host_url)
     resp = requests.get(repos_url)
     if not resp.ok:
         raise UnknownArtifactoryRestError("Error fetching repos", resp)
