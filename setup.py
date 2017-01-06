@@ -26,7 +26,7 @@ setup_requirements = []
 
 setup(
     name='ar_too',
-    version="0.4",
+    version="0.5",
     use_scm_version=True,
     setup_requires=setup_requirements,
     description="Artifactory configuration tool",
